@@ -14,13 +14,15 @@ Project is created with:
   - Language : `Python`
   - Library : `Yolo, OpenCV`
 - Server :
-  - Language : `JavaScript`
+  - Language : `TypeScript`
   - Library : `NestJS`
   - Database : `Firebase, MySQL`
 - Client :
   - Language : `JavaScript`
   - Library : `NextJS`
-  - Styling : `TailwindCSS`
+  - Styling : `TailwindCSS, Next UI`
+- Runtime Website :
+  - Runtime : `Bun`
 
 ## 👨🏻‍💻 Authors
 
@@ -28,6 +30,7 @@ Project is created with:
 - [@agripaa](https://www.github.com/agripaa)
 - [@dic-beep](https://www.github.com/dic-beep)
 - [@aai13newbie](https://www.github.com/aai13newbie)
+- [@deviktvn](https://github.com/deviktvn)
 
 ## 🔗 Social Media
 
