@@ -30,8 +30,15 @@ module.exports = {
   },
   darkMode: "class",
   plugins: [nextui({
-    layout: {
-      
+    themes:{
+      light:{
+        colors:{
+          primary:{
+            DEFAULT: '#f2f2f2',
+            foreground: "#f2f2f2"
+          }
+        }
+      }
     }
   })],
 }

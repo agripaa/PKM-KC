@@ -4,3 +4,13 @@ export interface IPelanggaran {
     jenisKendaraan: string;
     tanggal: string;
 }
+
+export interface IListPelanggaran extends IPelanggaran {
+    pukul: string;
+    durasiMelanggar: string;
+}
+
+export interface PelanggarListModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+}
