@@ -1,3 +1,4 @@
+"use client"
 import {
 	Navbar as NextUINavbar,
 	NavbarContent,
@@ -7,9 +8,14 @@ import {
   import { siteConfig } from "@/config/site";
   import ParqrLogo from "@/assets/LOGO PARQR.png";
   import NextLink from "next/link";
+  import { usePathname } from "next/navigation";
   import { Logo } from "@/components/icons";
   
-  export const Navbar = () => {
+  
+export const Navbar = () => {
+	const nameParams = usePathname();
+	const isActive = (href: string) => href === nameParams;
+  
 	return (
 	  <NextUINavbar maxWidth="xl" position="sticky" className="drop-shadow bg-neutral-50">
 		<NavbarContent className="basis-1/3 sm:basis-full" justify="start">
@@ -25,13 +31,12 @@ import {
 		  </NavbarBrand>
 		  <ul className="hidden lg:flex gap-2 justify-start ml-5">
 			{siteConfig.navItems.map((item) => (
-			  <NavbarItem key={item.href}>
+			  <NavbarItem key={item.href} className="text-blue-500">
 				<NextLink
-				  className='text-blue-500'
-				  color="primary"
 				  href={item.href}
+				  className={`p-2`}
 				>
-				  <p className="mr-4">{item.label}</p>
+				  <p className={`p-2 px-4 ${isActive(item.href) ? 'bg-blue-100 w-full bg-opacity-50 rounded-lg' : ''}`}>{item.label}</p>
 				</NextLink>
 			  </NavbarItem>
 			))}

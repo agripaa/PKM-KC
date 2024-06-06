@@ -1,15 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { dataListPelanggaran } from "@/data/pelanggarData";
-import {
-    RiSearch2Line,
-    RiCarFill,
-    RiMotorbikeFill,
-    RiTruckFill,
-    RiArrowRightSLine,
-} from "react-icons/ri";
-import { PelanggarListModalProps } from '@/interface/pelanggarInterface';
+import {RiArrowRightSLine} from "react-icons/ri";
+import { ModalProps } from '@/interface/pelanggarInterface';
+import { CarIcon, MotorCycleIcon, TruckIcon } from '../icons';
 
-const PelanggarListModal: React.FC<PelanggarListModalProps> = ({ isOpen, onClose }) => {
+const PelanggarListModal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     const modalRef = useRef<HTMLDivElement>(null);
 
     const handleClickOutside = (event: MouseEvent) => {
@@ -47,19 +42,20 @@ const PelanggarListModal: React.FC<PelanggarListModalProps> = ({ isOpen, onClose
                     </div>
                     <div className="space-y-4 mx-2 my-4 px-6 h-[65vh] pb-4 overflow-y-auto custom-scrollbar">
                         {dataListPelanggaran.map((pelanggaran, idx) => (
-                            <div
+                            <a
                                 key={idx}
-                                className="flex flex-col md:flex-row justify-between items-center p-2 hover:cursor-pointer"
+                                href={`/pelanggar/${pelanggaran.platNomor}`}
+                                className="flex flex-col md:flex-row justify-between items-center p-2 hover:cursor-pointer hover:bg-gray-50"
                             >
                                 <div className="flex items-center w-1/4 text-left">
                                     {pelanggaran.jenisKendaraan === "Mobil" && (
-                                        <RiCarFill className="inline-block mr-2" />
+                                        <CarIcon size={20} color="#3b82f6" className="inline-block mr-2" />
                                     )}
                                     {pelanggaran.jenisKendaraan === "Motor" && (
-                                        <RiMotorbikeFill className="inline-block mr-2" />
+                                        <MotorCycleIcon size={20} color="#3b82f6" className="inline-block mr-2" />
                                     )}
                                     {pelanggaran.jenisKendaraan === "Truk" && (
-                                        <RiTruckFill className="inline-block mr-2" />
+                                        <TruckIcon size={20} color="#3b82f6" className="inline-block mr-2" />
                                     )}
                                     <div className="text-sm font-medium text-gray-900">
                                         {pelanggaran.platNomor}
@@ -77,7 +73,7 @@ const PelanggarListModal: React.FC<PelanggarListModalProps> = ({ isOpen, onClose
                                 <div className="text-gray-900 font-medium text-xl relative m-0 p-0">
                                     <RiArrowRightSLine />
                                 </div>
-                            </div>
+                            </a>
                         ))}
                     </div>
                 </div>

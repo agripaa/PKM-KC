@@ -1,14 +1,12 @@
 "use client";
 import {
   RiSearch2Line,
-  RiCarFill,
-  RiMotorbikeFill,
-  RiTruckFill,
   RiArrowRightSLine,
 } from "react-icons/ri";
 import { FaChevronDown } from "react-icons/fa";
 import { dataPelanggaran } from "@/data/pelanggarData";
 import { useState, useEffect, useRef } from "react";
+import { MotorCycleIcon, CarIcon, TruckIcon } from "@/components/icons";
 
 export default function Page() {
   const [selectedKamera, setSelectedKamera] = useState<string>("");
@@ -162,13 +160,13 @@ export default function Page() {
             >
               <div className="flex items-center w-1/4 text-left">
                 {pelanggaran.jenisKendaraan === "Mobil" && (
-                  <RiCarFill className="inline-block mr-2" />
+                  <CarIcon size={20} color="#3b82f6" className="inline-block mr-2" />
                 )}
                 {pelanggaran.jenisKendaraan === "Motor" && (
-                  <RiMotorbikeFill className="inline-block mr-2" />
+                  <MotorCycleIcon size={20} color="#3b82f6" className="inline-block mr-2" />
                 )}
                 {pelanggaran.jenisKendaraan === "Truk" && (
-                  <RiTruckFill className="inline-block mr-2" />
+                  <TruckIcon size={20} color="#3b82f6" className="inline-block mr-2" />
                 )}
                 <div className="text-sm font-medium text-gray-900">
                   {pelanggaran.platNomor}

@@ -4,7 +4,7 @@ import cam1 from "@/assets/cam1.png";
 import * as React from "react";
 import { RadioGroup, Radio } from "@nextui-org/react";
 import { ArrowRight, MapPin, Time } from "@/components/icons";
-import PelanggarListModal from "@/components/PelanggarListModal";
+import PelanggarListModal from "@/components/modal/PelanggarListModal";
 
 export default function Home() {
   const [isModalOpen, setModalOpen] = React.useState(false);
@@ -39,7 +39,7 @@ export default function Home() {
           <div className="justify-center">
             <div className="flex flex-row w-full mt-2">
               <div className="mr-2">
-                <MapPin color="#3b82f6" />
+                <MapPin color="#3b82f6" className="justify-center" />
               </div>
               <p className="font-semibold">
                 Jalan Raya Margonda Raya, Depok
@@ -47,7 +47,7 @@ export default function Home() {
             </div>
             <div className="flex flex-row w-full mt-2">
               <div className="mr-2">
-                <Time color="#3b82f6" />
+                <Time color="#3b82f6" className="justify-center" />
               </div>
               <p className="font-semibold">
                 12.45 WIB
@@ -62,7 +62,7 @@ export default function Home() {
               <span className="text-sm">Pelanggaran hari ini: 7</span>
             </div>
             <div>
-              <ArrowRight color="#FAFAFA" width={30} height={30}/>
+              <ArrowRight className="justify-center" color="#FAFAFA" width={30} height={30}/>
             </div>
           </div>
         </div>
